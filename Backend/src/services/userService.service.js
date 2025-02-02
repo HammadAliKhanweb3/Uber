@@ -16,7 +16,6 @@ export const createUser = async ({ firstname, lastname, email, password }) => {
   });
 
   const user = await User.findById(createdUser._id);
-  console.log("response from db:", user);
 
   return user;
 };

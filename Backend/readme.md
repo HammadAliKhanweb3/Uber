@@ -1,9 +1,7 @@
 
 # Backend  API Documentation
 
-## User Registration API
-
-### Endpoint: `/users/register-user`
+## Endpoint: `/users/register-user`
 
 ### Description
 
@@ -113,5 +111,98 @@ The request body should be in JSON format and include the following fields:
   "status": 400,
   "message": "Invalid Mail, Password must be greater than 5 characters"
 }
-
 ```
+
+### 3. Get User Profile
+**Endpoint:** `GET /users/profile`
+
+**Description:** Retrieves the profile information of the authenticated user.
+
+#### Request Headers
+The request must include the following headers or jwt in cookies:
+- `Authorization`: A string containing the Bearer token for authentication.
+
+#### Example Request
+```http
+GET /users/profile HTTP/1.1
+Host: example.com
+Authorization: Bearer jwt_access_token
+```
+
+## Success Response
+## Status: 200 OK
+
+```json
+{
+  "status": 200,
+  "message": "User profile retrieved successfully",
+  "data": {
+    "user": {
+      "_id": "user_id",
+      "fullname": {
+        "firstname": "John",
+        "lastname": "Doe"
+      },
+      "email": "john.doe@example.com",
+      "createdAt": "2021-06-14T12:34:56.789Z",
+      "updatedAt": "2021-06-14T12:34:56.789Z"
+    }
+  }
+}
+```
+
+#### Error Responses
+#### Unauthorized Error
+#### Status: 401 Unauthorized
+```json
+{
+  "status": 401,
+  "message": "Unauthorized access, invalid or missing token"
+}
+```
+
+### 4. Logout User
+**Endpoint:** `POST /users/logout`
+
+**Description:** Logs out the current user by invalidating their session token. It ensures that the user is no longer authenticated and cannot access protected resources until they log in again.
+
+#### Request Headers
+The request must include the following headers or jwt in cookies:
+- `Authorization`: A string containing the Bearer token for authentication.
+
+#### Example Request
+```http
+POST /users/logout HTTP/1.1
+Host: example.com
+Authorization: Bearer jwt_access_token
+```
+
+## Success Response
+## Status: 200 OK
+
+```json
+{
+  "status": 200,
+  "message": "Successfully logged out"
+}
+```
+
+#### Error Responses
+#### Unauthorized Error
+#### Status: 401 Unauthorized
+```json
+{
+  "status": 401,
+  "message": "Unauthorized. The user is not authenticated."
+}
+```
+
+#### Internal Server Error
+#### Status: 500 Internal Server Error
+```json
+{
+  "status": 500,
+  "message": "Internal server error. An error occurred while processing the request."
+}
+```
+

@@ -4,8 +4,9 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
 import { createUser } from "../services/userService.service.js";
+import { blackListToken } from "../models/blackListToken.model.js";
 
-const registerUser = asyncHandler(async (req, res, next) => {
+const registerUser = asyncHandler(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     const errorMessages = errors
@@ -24,7 +25,6 @@ const registerUser = asyncHandler(async (req, res, next) => {
     email,
     password: hashedPassword,
   });
-  console.log("returned response in controller", user);
 
   const token = await user.generateAccessToken();
   return res
@@ -34,7 +34,7 @@ const registerUser = asyncHandler(async (req, res, next) => {
     );
 });
 
-const loginUser = asyncHandler(async (req, res, next) => {
+const loginUser = asyncHandler(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     const errorMessages = errors
@@ -58,7 +58,30 @@ const loginUser = asyncHandler(async (req, res, next) => {
   const token = await user.generateAccessToken();
   return res
     .status(200)
+    .cookie("token", token)
     .json(new ApiResponse(200, "User logged in successfully", { user, token }));
 });
 
-export { registerUser, loginUser };
+const getUserProfile = asyncHandler(async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, "User fetched Successfully", req.user));
+});
+
+const logoutUser = asyncHandler(async (req, res) => {
+  const token =
+    req.cookies?.token || req.header("Authorization")?.replace("Bearer ", "");
+
+  if (!token) {
+    throw new ApiError(401, "Unathorized User");
+  }
+
+  const BlackList = await blackListToken.create({ token: token });
+
+  res
+    .status(200)
+    .clearCookie("token")
+    .json(200, "User logged out successfully", {});
+});
+
+export { registerUser, loginUser, getUserProfile, logoutUser };
