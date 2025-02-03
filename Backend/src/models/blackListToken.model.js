@@ -13,7 +13,7 @@ const blacListTokenShema = new Schema({
   },
 });
 
-export const blackListToken = mongoose.model(
+export const  blackListToken = mongoose.model(
   "blackListToken",
   blacListTokenShema
 );

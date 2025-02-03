@@ -9,6 +9,7 @@ const userSchema = new Schema(
         type: String,
         required: true,
         minlength: [3, "First name must be at least 3 characters long"],
+        unique: true,
       },
       lastname: {
         type: String,
@@ -19,11 +20,18 @@ const userSchema = new Schema(
       type: String,
       required: true,
       minlength: [5, "Email must be at least 5 characters long"],
+      unique: true,
+      trim: true,
+      lowercase: true,
     },
     password: {
       type: String,
-      required: true,
+      required: [true, "password is required"],
+      minlength: [6, "Email must be at least 5 characters long"],
       select: false,
+    },
+    socketId: {
+      type: String,
     },
   },
   { timestamps: true }
