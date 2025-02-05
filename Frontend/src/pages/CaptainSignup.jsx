@@ -18,7 +18,6 @@ const CaptainSignup = () => {
       email,
       password,
     });
-    console.log(captainData);
 
     setFirstName("");
     setLastName("");
@@ -37,7 +36,7 @@ const CaptainSignup = () => {
             submitHandler(e);
           }}
         >
-          <h2 className="text-lg font-medium mt-3">Whats your name</h2>
+          <h2 className="text-lg font-medium mt-3">What's our Captain's name</h2>
           <div className="flex gap-3">
             <input
               className="bg-[#eeeeee] w-1/2 p-2 rounded text-lg mt-2 placeHolder:base"
@@ -59,7 +58,7 @@ const CaptainSignup = () => {
               }}
             />
           </div>
-          <h2 className="text-lg font-medium mt-5">Whats your email</h2>
+          <h2 className="text-lg font-medium mt-5">What's our Captain's email</h2>
 
           <input
             className="bg-[#eeeeee] w-full p-2 rounded  mt-2  text-lg placeHolder:base"

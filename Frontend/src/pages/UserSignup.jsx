@@ -18,7 +18,6 @@ const UserSignup = () => {
       email,
       password,
     });
-    console.log(userData);
 
     setFirstName("");
     setLastName("");

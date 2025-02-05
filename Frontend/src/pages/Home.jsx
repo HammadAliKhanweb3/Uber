@@ -9,10 +9,10 @@ const Home = () => {
           src="https://www.logo.wine/a/logo/Uber/Uber-Logo.wine.svg"
         ></img>
         <div className="bg-white w-full h-36 flex flex-col px-3 gap-1">
-          <h2 className="text-2xl font-bold mt-2">Get Started with Uber</h2>
+          <h2 className="text-[30px] font-bold mt-2">Get Started with Uber</h2>
           <Link
             to="/login"
-            className="text-center w-full bg-black text-amber-50 rounded-md py-3 mt-5"
+            className="text-center w-full bg-black text-amber-50 rounded-lg py-3 mt-2"
           >
             Continue
           </Link>

@@ -12,8 +12,6 @@ const UserLogin = () => {
       email,
       password,
     });
-console.log(userData);
-
 
     setEmail("");
     setPassword("");
@@ -31,7 +29,6 @@ console.log(userData);
             submitHandler(e);
           }}
         >
-          
           <h2 className="text-lg font-medium mt-5">Whats your email</h2>
 
           <input
