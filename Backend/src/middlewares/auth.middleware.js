@@ -8,7 +8,7 @@ import { Captain } from "../models/captain.model.js";
 const authUser = asyncHandler(async (req, _, next) => {
   try {
     const token =
-      req.cookies?.token || req.header("Authorization")?.replace("bearer ", "");
+      req.cookies?.token || req.header("Authorization")?.replace("Bearer ", "");
     if (!token) {
       throw new ApiError(401, "Empty token");
     }
@@ -35,7 +35,7 @@ const authUser = asyncHandler(async (req, _, next) => {
 const authCaptain = asyncHandler(async (req, _, next) => {
   try {
     const token =
-      req.cookies?.token || req.header("Authorization")?.replace("bearer ", "");
+      req.cookies?.token || req.header("Authorization")?.replace("Bearer ", "");
 
     if (!token) {
       throw new ApiError(400, "Empty token");
