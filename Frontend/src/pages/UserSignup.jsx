@@ -28,13 +28,12 @@ const UserSignup = () => {
       `${import.meta.env.VITE_BASE_URL}/users/register-user`,
       newUser
     );
-  
 
     if (response.status === 200) {
       const data = response.data.data;
       setUser(data.user);
       localStorage.setItem("token", data.token);
-      navigate("/start");
+      navigate("/Home");
     }
 
     setFirstName("");

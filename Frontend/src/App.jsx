@@ -9,20 +9,22 @@ import UserProtectedWraper from "./pages/UserProtectedWraper";
 import UserLougout from "./pages/UserLougout";
 import CaptainStart from "./pages/CaptainStart";
 import CaptainProtectedWraper from "./pages/CaptainProtectedWraper";
+import Riding from "./pages/Riding";
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Start />} />
       <Route path="/login" element={<UserLogin />} />
+      <Route path="/Riding" element={<Riding />} />
       <Route path="/signup" element={<UserSignup />} />
       <Route path="/captain-login" element={<CaptainLogin />} />
       <Route path="/captain-signUp" element={<CaptainSignup />} />
       <Route
-        path="/start"
+        path="/Home"
         element={
           <UserProtectedWraper>
-            <Start />
+            <Home />
           </UserProtectedWraper>
         }
       />

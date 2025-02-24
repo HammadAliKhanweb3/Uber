@@ -56,8 +56,7 @@ const loginUser = asyncHandler(async (req, res) => {
     return res.status(400).json(new ApiResponse(400, "Invalid password", {}));
   }
   const token = await user.generateAccessToken();
-  console.log(token);
-  console.log(user);
+  
   
   return res
     .status(200)

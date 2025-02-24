@@ -26,13 +26,8 @@ const UserLogin = () => {
     if (response.status == 200) {
       const data = response.data.data;
       setUser(data);
-      console.log(data.token);
-
       localStorage.setItem("token", data.token);
-      const check = localStorage.getItem("token")
-      console.log(check);
-      
-      navigate("/start");
+      navigate("/Home");
     }
 
     setEmail("");
