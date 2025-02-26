@@ -4,7 +4,7 @@ const Riding = () => {
   return (
     <div className="h-screen w-screen">
       <Link
-        to={"/Start"}
+        to={"/Home"}
         className="fixed flex bg-white top-2 right-2 h-10 w-10 justify-center items-center rounded-full"
       >
         <i className="text-lg font-medium  ri-home-5-line"></i>

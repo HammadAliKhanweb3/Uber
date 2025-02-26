@@ -26,7 +26,7 @@ const CaptainLogin = () => {
           const data = response.data.data;
           setCaptain(data);
           localStorage.setItem("token", data.token);
-          navigate("/captain-start");
+          navigate("/captain-home");
         }
       });
 
@@ -69,7 +69,7 @@ const CaptainLogin = () => {
             }}
           />
 
-          <button className="flex flex-center justify-center font-semibold text-white p-2 bg-black w-full rounded placeholder:text-base mt-5">
+          <button className="flex flex-center justify-center py-3 font-semibold text-white p-2 bg-black w-full rounded placeholder:text-base mt-5">
             Login
           </button>
           <p className="text-center mt-3 font-medium">
@@ -82,7 +82,7 @@ const CaptainLogin = () => {
       </div>
       <div>
         <Link
-          className="flex flex-center justify-center font-semibold text-white p-2 bg-orange-300 w-full rounded placeholder:text-base mb-7"
+          className="flex flex-center justify-center font-semibold text-white p-2 py-3 bg-orange-400 w-full rounded placeholder:text-base mb-7"
           to="/login"
         >
           Sign in As User

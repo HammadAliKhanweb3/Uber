@@ -71,6 +71,7 @@ const CaptainSignup = () => {
           <div className="flex gap-3">
             <input
               className="bg-[#eeeeee] w-1/2 p-2 rounded text-lg mt-2 placeHolder:text-base"
+              required
               type="text"
               placeholder="First name"
               value={firstname}
@@ -81,6 +82,7 @@ const CaptainSignup = () => {
 
             <input
               className="bg-[#eeeeee] w-1/2 p-2  mt-2 text-lg placeHolder:text-base"
+              required
               type="text"
               placeholder="Last name"
               value={lastname}
@@ -95,6 +97,7 @@ const CaptainSignup = () => {
 
           <input
             className="bg-[#eeeeee] w-full p-2 rounded  mt-2  text-lg placeHolder:text-base"
+            required
             type="text"
             placeholder="email@example.com"
             value={email}
@@ -106,6 +109,7 @@ const CaptainSignup = () => {
           <h2 className="text-lg font-medium mt-4">Enter your Password</h2>
           <input
             className="bg-[#eeeeee]  rounded w-full p-2  text-lg  placeholder:text-base mt-2"
+            required
             type="password"
             placeholder="password"
             value={password}
@@ -154,6 +158,7 @@ const CaptainSignup = () => {
             />
             <select
               className="w-1/2 bg-[#eeeeee] rounded placeholder:text-base p-2"
+              required
               name=""
               id=""
               value={vehicleType}

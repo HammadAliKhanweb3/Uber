@@ -112,14 +112,14 @@ const Home = () => {
       />
       <div>
         <img
-          className="h-screen w-full "
+          className="h-screen w-full object-cover"
           src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif"
           alt=""
         />
       </div>
 
       <div className="flex flex-col justify-end h-screen absolute top-0 w-full">
-        <div className="h-[30%] p-6  bg-white relative ">
+        <div className="h-[35%] p-6  bg-white relative ">
           <h5
             ref={panelCloseRef}
             onClick={() => {
@@ -135,7 +135,7 @@ const Home = () => {
               submitHandler(e);
             }}
           >
-            <div className="line h-18 w-1 bg-gray-900 rounded-full left-10 z-10 top-[65%] -translate-y-1/2 absolute"></div>
+            <div className="line h-18 w-1 bg-gray-900 rounded-full left-10 z-10 top-[58%] -translate-y-1/2 absolute"></div>
             <input
               onClick={() => {
                 setPanelOpen(true);

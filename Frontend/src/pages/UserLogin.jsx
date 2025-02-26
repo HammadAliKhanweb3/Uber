@@ -69,7 +69,7 @@ const UserLogin = () => {
             }}
           />
 
-          <button className="flex flex-center justify-center font-semibold text-white p-2 bg-black w-full rounded placeholder:text-base mt-5">
+          <button className="flex flex-center justify-center font-semibold text-white p-2 py-3 bg-black w-full rounded placeholder:text-base mt-5">
             Login
           </button>
           <p className="text-center mt-3 font-medium">
@@ -82,7 +82,7 @@ const UserLogin = () => {
       </div>
       <div>
         <Link
-          className="flex flex-center justify-center font-semibold text-white p-2 bg-[#10b461] w-full rounded placeholder:text-base mb-7"
+          className="flex flex-center justify-center font-semibold py-3 text-white p-2 bg-[#10b461] w-full rounded placeholder:text-base mb-7"
           to="/captain-login"
         >
           Sign in As Captain
