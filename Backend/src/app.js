@@ -27,10 +27,13 @@ app.get("/", (req, res) => {
 
 import userRouter from "./routes/user.route.js";
 import captainRouter from "./routes/captain.route.js";
+import mapRouter from "./routes/maps.route.js";
+import rideRouter from "./routes/ride.route.js";
 
 app.use("/users", userRouter);
 app.use("/captains", captainRouter);
-
+app.use("/maps", mapRouter);
+app.use("/rides", rideRouter);
 
 app.use((err, req, res, next) => {
   if (err instanceof ApiError) {
@@ -46,8 +49,5 @@ app.use((err, req, res, next) => {
     message: "Internal Server Error",
   });
 });
-
-
-
 
 export default app;
