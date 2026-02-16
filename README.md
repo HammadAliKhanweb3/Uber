@@ -1,1 +1,1 @@
-Uber Clone Full stack Application built with React and Express JS.
+Full stack Uber Application built with React and Express JS.
